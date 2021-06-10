@@ -98,7 +98,9 @@
 // }; 
 // 
 const input = require('readline-sync');
-
+let question = 'Who was the first American woman in space? ';
+let correctAnswer = 'Sally Ride';
+let candidateAnswer = '';
 let candidateName = "";
 let questions = [
   "Who was the first American woman in space? ",
@@ -134,7 +136,7 @@ function askQuestion() {
   // console.log(candidateAnswers);
 }
 }
- console.log(candidateAnswers);
+//  console.log(candidateAnswers);
 function gradeQuiz() {
   let grade = 0;
   let correct = 0;
@@ -160,7 +162,7 @@ else{
 
 console.log(`>>> Overall Grade: ${grade}% (${correct} of 5 responses correct) <<<
 >>> Status: ${status} <<<`);
-console.log(grade)
+// console.log(grade)
 return grade;
 }
 
@@ -176,9 +178,9 @@ function runProgram() {
 // And don't change these or your program will not run as expected //
 module.exports = {
   candidateName: candidateName,
-  //question: question,
-  //correctAnswer: correctAnswer,
-  //candidateAnswer: candidateAnswer,
+  question: question,
+  correctAnswer: correctAnswer,
+  candidateAnswer: candidateAnswer,
   questions: questions,
   correctAnswers: correctAnswers,
   candidateAnswers: candidateAnswers,
