@@ -137,7 +137,7 @@ function askQuestion() {
 }
 }
 //  console.log(candidateAnswers);
-function gradeQuiz() {
+function gradeQuiz(candidateAnswers) {
   let grade = 0;
   let correct = 0;
   let status;
