@@ -128,12 +128,9 @@ function askQuestion() {
   
   for (let i = 0; i < questions.length; i++) {
     candidateAnswers[i] = (input.question("\n" + (i+1) + ") " + questions[i]+" "));
-    if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
-      score = score + 1;
-    }    
-    else {
-      //console.log(`You are wrong! Your answer ${candidateAnswers} is not correct.`) 
-    }
+    // if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
+    //   score = score + 1;
+    // }    
      console.log(`Your Answer: ${candidateAnswers[i]}`);
      console.log(`Correct Answer: ${correctAnswers[i]}`);
      console.log();
@@ -144,6 +141,12 @@ function askQuestion() {
 function gradeQuiz(candidateAnswers) {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
     let grade;
+    for (let i = 0; i < questions.length; i++){
+        if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
+      score = score + 1;
+    }    
+    }
+
     grade = (score/questions.length)*100; 
     if (grade >= 80) {
       status = "PASSED";
@@ -155,9 +158,10 @@ function gradeQuiz(candidateAnswers) {
 
 //console.log("grade " + grade);
 //console.log("typeof " + typeof grade);
-
     return grade;
 }
+
+gradeQuiz
 
 function runProgram() {
   askForName();
